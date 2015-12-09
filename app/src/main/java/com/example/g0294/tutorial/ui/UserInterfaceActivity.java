@@ -9,7 +9,7 @@ import android.widget.Button;
 import com.example.g0294.tutorial.R;
 
 public class UserInterfaceActivity extends Activity {
-    private Button btn_textView, btn_editText, btn_imageView, btn_button, btn_ratoteImage,
+    private Button btn_textView, btn_editText, btn_imageView, btn_button, btn_ratoteImage, btn_imageResize,
             btn_checkBox, btn_radioButton, btn_datetimePicker, btn_progressBar, btn_seekBar, btn_toast;
 
     @Override
@@ -27,6 +27,8 @@ public class UserInterfaceActivity extends Activity {
         btn_button.setOnClickListener(listener);
         btn_ratoteImage = (Button) findViewById(R.id.btn_rotateImage);
         btn_ratoteImage.setOnClickListener(listener);
+        btn_imageResize = (Button) findViewById(R.id.btn_imageResize);
+        btn_imageResize.setOnClickListener(listener);
     }
 
     class SelectActivity implements View.OnClickListener {
@@ -48,6 +50,10 @@ public class UserInterfaceActivity extends Activity {
                     break;
                 case R.id.btn_rotateImage:
                     intent.setClass(getApplicationContext(), ImageZoomActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_imageResize:
+                    intent.setClass(getApplicationContext(), ImageResizeActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.btn_button:

@@ -12,11 +12,12 @@ import android.widget.Toast;
 import com.example.g0294.tutorial.activitylifecycle.ActivityA;
 import com.example.g0294.tutorial.customstyle.CustomStyleActivity;
 import com.example.g0294.tutorial.layouts.LayoutsActivity;
+import com.example.g0294.tutorial.memoryleak.MemoryOne;
 import com.example.g0294.tutorial.ui.UserInterfaceActivity;
 
 
 public class MainActivity extends AppCompatActivity {
-    protected Button layouts, inputControl, lifeCycle, customStyle;
+    protected Button layouts, inputControl, lifeCycle, customStyle, memoryLeak;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +28,14 @@ public class MainActivity extends AppCompatActivity {
         inputControl = (Button) findViewById(R.id.inputControl);
         lifeCycle = (Button) findViewById(R.id.lifeCycle);
         customStyle = (Button)findViewById(R.id.customStyle);
+        memoryLeak = (Button)findViewById(R.id.memoryLeak);
 
         MainClickListener listener = new MainClickListener();
         layouts.setOnClickListener(listener);
         inputControl.setOnClickListener(listener);
         lifeCycle.setOnClickListener(listener);
         customStyle.setOnClickListener(listener);
+        memoryLeak.setOnClickListener(listener);
     }
 
     @Override
@@ -75,6 +78,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.customStyle:
                     intent.setClass(MainActivity.this, CustomStyleActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.memoryLeak:
+                    intent.setClass(MainActivity.this, MemoryOne.class);
                     startActivity(intent);
                     break;
             }

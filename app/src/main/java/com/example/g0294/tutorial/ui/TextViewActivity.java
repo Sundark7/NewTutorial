@@ -50,9 +50,9 @@ public class TextViewActivity extends Activity {
         tvLink.setMovementMethod(LinkMovementMethod.getInstance());
 
         //HTML tag
-        String html = "<font color='red'>顏色紅色</font><br>";
-        html += "<big><i>大字斜體</i></big><p>";
-        html += "<a href='http://www.google.com'>GOOGLE</a>";
+        String html = "<font color='red'>顏色紅色</font><br>" +
+                "<big><i>大字斜體</i></big>" +
+                "<p><a href='http://www.google.com'>GOOGLE</a>";
         CharSequence charSequence = Html.fromHtml(html);
         tvHtml.setText(charSequence);
         tvHtml.setMovementMethod(LinkMovementMethod.getInstance()); //點擊時產生動作
@@ -61,7 +61,7 @@ public class TextViewActivity extends Activity {
         //Spannable Object
         SpannableString ss = new SpannableString("Text: Bold, Click here to Dial");
         ss.setSpan(new StyleSpan(Typeface.BOLD),6,10, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        ss.setSpan(new URLSpan("tel:0912345678"),18,22,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(new URLSpan("web:0912345678"),18,22,Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         tvSpan.setText(ss);
         tvSpan.setMovementMethod(LinkMovementMethod.getInstance());
     }

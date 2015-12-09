@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Demo Text"
+            android:text="@string/linear_layout"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -46,7 +46,6 @@
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:marqueeRepeatLimit="marquee_forever"
-            android:scrollHorizontally="true"
             android:singleLine="true"
             android:text="跑馬燈需為單行且長度大於寬度，還有取得焦點與觸碰焦點才行"
             android:textSize="18sp" />
@@ -66,7 +65,7 @@
             android:id="@+id/tvLink"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autoLink="all"
+            android:autoLink="none"
             android:textSize="18sp" />
     </LinearLayout>
 

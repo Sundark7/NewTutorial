@@ -34,4 +34,9 @@
         android:layout_height="wrap_content"
         android:background="@drawable/patched_button"
         android:text="@string/custom_style" />
+    <Button
+        android:id="@+id/memoryLeak"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/memory_leak" />
 </LinearLayout>

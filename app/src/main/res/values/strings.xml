@@ -7,6 +7,7 @@
     <string name="linear_layout">Linear Layout</string>
     <string name="relative_layout">Relative Layout</string>
     <string name="table_layout">Table Layout</string>
+    <string name="memory_leak">Memory Leak</string>
     <string name="account">Account:</string>
     <string name="login">Login</string>
     <string name="home">Home</string>
@@ -16,7 +17,8 @@
     <string name="your_age">%1$s，出生於西元%2$d，現年%3$d歲。</string>
     <string name="edit_text">Edit Text</string>
     <string name="image_view">Image View</string>
-    <string name="rotate_image">Rotate Image View</string>
+    <string name="rotate_image">Rotate Image</string>
+    <string name="image_resize">Image Resize</string>
     <string name="button">Button</string>
 
     <string name="link_text"><a href="tel:0922123456">打電話0922123456</a></string>

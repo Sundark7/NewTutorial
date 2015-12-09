@@ -47,7 +47,11 @@
             android:name=".activitylifecycle.DialogActivity"
             android:theme="@android:style/Theme.Dialog" />
         <activity android:name=".customstyle.CustomStyleActivity" />
-        <activity android:name=".ui.ImageZoomActivity"/>
+        <activity android:name=".ui.ImageZoomActivity" />
+        <activity android:name=".memoryleak.StaticInstance"/>
+        <activity android:name=".memoryleak.MemoryOne"/>
+        <activity android:name=".memoryleak.MemoryTwo"/>
+        <activity android:name=".ui.ImageResizeActivity"/>
     </application>
 
 </manifest>

@@ -34,6 +34,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/button" />
+        <Button
+            android:id="@+id/btn_imageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/image_view" />
 
     </LinearLayout>
 
@@ -42,17 +48,18 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/btn_imageView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/image_view" />
-        <Button
             android:id="@+id/btn_rotateImage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/rotate_image" />
+
+        <Button
+            android:id="@+id/btn_imageResize"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/image_resize" />
     </LinearLayout>
 
 </LinearLayout>

@@ -39,9 +39,9 @@ public class ImageZoomActivity extends Activity implements SeekBar.OnSeekBarChan
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
         if (seekBar.getId()==R.id.seekBar1){
             int newWidth = progress + minWidth;
-            int newHeight = newWidth;
-            imageView.setLayoutParams(new LinearLayout.LayoutParams(newWidth,newHeight));
-            textView1.setText("圖片寬度: "+newWidth+"高度: "+newHeight);
+            //int newHeight = newWidth;
+            imageView.setLayoutParams(new LinearLayout.LayoutParams(newWidth,newWidth));
+            textView1.setText("圖片大小: "+newWidth);
         }
         else if (seekBar.getId()==R.id.seekBar2){
             Bitmap bitmap = ((BitmapDrawable)(getResources().getDrawable(R.drawable.cat))).getBitmap();
