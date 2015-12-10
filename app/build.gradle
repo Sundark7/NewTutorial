@@ -6,6 +6,7 @@ android {
             keyAlias 'mykey'
             keyPassword '123456'
             storePassword '123456'
+            storeFile file('D:/MyAndroidKey.keystore')
         }
     }
     compileSdkVersion 23
