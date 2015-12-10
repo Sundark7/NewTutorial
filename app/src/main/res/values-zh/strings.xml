@@ -14,13 +14,13 @@
     <string name="Layouts">Layouts</string>
     <string name="User_Interface">Input Control</string>
     <string name="rotate_image">旋轉圖形</string>
-
+    <string name="memory_leak">記憶體洩漏</string>
     <string name="text_view">Text View</string>
     <string name="your_age">%1$s，出生於西元%2$d，現年%3$d歲。</string>
     <string name="edit_text">Edit Text</string>
     <string name="image_view">Image View</string>
     <string name="button">Button</string>
-
+    <string name="image_resize">Image Resize</string>
     <string name="link_text"><a href="tel:0922123456">打電話0922123456</a></string>
 
     <!-- Life Cycle-->
