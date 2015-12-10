@@ -5,7 +5,6 @@ android {
         release {
             keyAlias 'mykey'
             keyPassword '123456'
-            storeFile file('D:/MyAndroidKey.keystore')
             storePassword '123456'
         }
     }
@@ -25,20 +24,16 @@ android {
             signingConfig signingConfigs.release
             debuggable false
         }
-        debug {
-        }
     }
     productFlavors {
         free {
             buildConfigField 'boolean', 'life_cycle', 'false'
             applicationId 'com.example.g0294.tutorial.free'
-            proguardFile 'D:/myprogurd.txt'
         }
         pro {
             applicationId 'com.example.g0294.tutorial.pro'
             buildConfigField 'boolean', 'life_cycle', 'true'
             signingConfig signingConfigs.release
-            proguardFile 'D:/myprogurd.txt'
         }
     }
     dexOptions {
