@@ -34,5 +34,6 @@ public class MemoryTwo extends Activity{
     @Override
     protected void onDestroy() {
         super.onDestroy();
+//        ActivityManager.instance().unRigistActivity(this);
     }
 }

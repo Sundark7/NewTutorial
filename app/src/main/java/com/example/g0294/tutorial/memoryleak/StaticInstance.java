@@ -19,6 +19,13 @@ public class StaticInstance extends Activity{
             sInstance= new Demo();
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        sInstance=null;
+    }
+
     class Demo
     {
         void doSomething()

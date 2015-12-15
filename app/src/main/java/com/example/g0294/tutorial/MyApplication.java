@@ -1,15 +1,38 @@
 package com.example.g0294.tutorial;
 
 import android.app.Application;
+import android.content.res.Configuration;
+import android.util.Log;
 
-import com.squareup.leakcanary.LeakCanary;
-import com.squareup.leakcanary.RefWatcher;
+public class MyApplication extends Application {
+//    protected RefWatcher refWatcher;
+    int myNum = 10;
+    private String myState;
 
-public class MyApplication extends Application{
-    protected RefWatcher refWatcher;
+    public String getState() {
+        return myState;
+    }
+
+    public void setState(String s) {
+        myState = s;
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();
-        refWatcher = LeakCanary.install(this);
+        Log.i("Application", "onCreate");
+//        refWatcher = LeakCanary.install(this);
+    }
+
+    @Override
+    public void onTerminate() {
+        Log.i("Application", "onTerminate");
+        super.onTerminate();
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Log.i("Application", "onConfigurationChanged");
     }
 }

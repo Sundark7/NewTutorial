@@ -15,20 +15,48 @@ import com.example.g0294.tutorial.layouts.LayoutsActivity;
 import com.example.g0294.tutorial.memoryleak.MemoryOne;
 import com.example.g0294.tutorial.ui.UserInterfaceActivity;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 
 public class MainActivity extends AppCompatActivity {
-    protected Button layouts, inputControl, lifeCycle, customStyle, memoryLeak;
+    String TAG = "MainActivity";
+//    protected Button layouts, inputControl, lifeCycle, customStyle, memoryLeak;
+    @Bind(R.id.layouts)
+    Button layouts;
+    @Bind(R.id.lifeCycle)
+    Button lifeCycle;
+    @Bind(R.id.inputControl)
+    Button inputControl;
+    @Bind(R.id.customStyle)
+    Button customStyle;
+    @Bind(R.id.memoryLeak)
+    Button memoryLeak;
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "onDestroy");
+        //Applcation 實際未完全關閉
+//        System.exit(0);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+        /* Applicaiton Variable */
+        MyApplication app = ((MyApplication) getApplicationContext());
+        String state = app.getState();
+        int num = app.myNum;
+        Log.i(TAG, "onCreate");
 
-        layouts = (Button) findViewById(R.id.layouts);
-        inputControl = (Button) findViewById(R.id.inputControl);
-        lifeCycle = (Button) findViewById(R.id.lifeCycle);
-        customStyle = (Button)findViewById(R.id.customStyle);
-        memoryLeak = (Button)findViewById(R.id.memoryLeak);
+//        layouts = (Button) findViewById(R.id.layouts);
+//        inputControl = (Button) findViewById(R.id.inputControl);
+//        lifeCycle = (Button) findViewById(R.id.lifeCycle);
+//        customStyle = (Button) findViewById(R.id.customStyle);
+//        memoryLeak = (Button) findViewById(R.id.memoryLeak);
 
         MainClickListener listener = new MainClickListener();
         layouts.setOnClickListener(listener);
@@ -71,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.lifeCycle:
                     if (BuildConfig.life_cycle) {
                         Toast.makeText(getApplicationContext(), "這是專業版功能!", Toast.LENGTH_SHORT).show();
-                    } else{
+                    } else {
                         intent.setClass(MainActivity.this, ActivityA.class);
                         startActivity(intent);
                     }

@@ -32,7 +32,6 @@ public class MemoryOne extends Activity{
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
-        ActivityManager.instance().registActivity(this);
+        ActivityManager.instance().unRigistActivity(this);
     }
 }

@@ -28,4 +28,11 @@
         android:layout_below="@id/relativeLayout"
         android:text="@string/table_layout" />
 
+    <Button
+        android:id="@+id/inflateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tableLayout"
+        android:text="Inflate Layout" />
+
 </RelativeLayout>
