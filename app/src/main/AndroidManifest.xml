@@ -54,12 +54,12 @@
         <activity android:name=".memoryleak.MemoryTwo"/>
         <activity android:name=".ui.ImageResizeActivity"/>
         <activity android:name=".layouts.InflateActivity"/>
-        <activity android:name=".containers.ContainerSelectActivity" />
-        <activity android:name=".containers.ListViewAttrActivity" />
-        <activity android:name=".containers.SimpleAdapterActivity" />
-        <activity android:name=".containers.ArrayAdapterActivity" />
-        <activity android:name=".containers.BaseAdapterActivity" />
-        <activity android:name=".containers.GridViewActivity" />
+        <activity android:name=".adapterview.ContainerSelectActivity" />
+        <activity android:name=".adapterview.ListViewAttrActivity" />
+        <activity android:name=".adapterview.SimpleAdapterActivity" />
+        <activity android:name=".adapterview.ArrayAdapterActivity" />
+        <activity android:name=".adapterview.BaseAdapterActivity" />
+        <activity android:name=".adapterview.GridViewActivity" />
     </application>
 
 </manifest>

@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.g0294.tutorial.activitylifecycle.ActivityA;
-import com.example.g0294.tutorial.containers.ContainerSelectActivity;
+import com.example.g0294.tutorial.adapterview.ContainerSelectActivity;
 import com.example.g0294.tutorial.customstyle.CustomStyleActivity;
 import com.example.g0294.tutorial.layouts.LayoutsActivity;
 import com.example.g0294.tutorial.memoryleak.MemoryOne;
