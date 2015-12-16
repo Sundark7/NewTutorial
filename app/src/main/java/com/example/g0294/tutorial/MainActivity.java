@@ -5,11 +5,15 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
+import android.view.Surface;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.g0294.tutorial.activitylifecycle.ActivityA;
+import com.example.g0294.tutorial.containers.ContainerSelectActivity;
 import com.example.g0294.tutorial.customstyle.CustomStyleActivity;
 import com.example.g0294.tutorial.layouts.LayoutsActivity;
 import com.example.g0294.tutorial.memoryleak.MemoryOne;
@@ -21,7 +25,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
     String TAG = "MainActivity";
-//    protected Button layouts, inputControl, lifeCycle, customStyle, memoryLeak;
+    //    protected Button layouts, inputControl, lifeCycle, customStyle, memoryLeak;
     @Bind(R.id.layouts)
     Button layouts;
     @Bind(R.id.lifeCycle)
@@ -32,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     Button customStyle;
     @Bind(R.id.memoryLeak)
     Button memoryLeak;
+    @Bind(R.id.container)
+    Button container;
 
     @Override
     protected void onDestroy() {
@@ -50,7 +56,16 @@ public class MainActivity extends AppCompatActivity {
         MyApplication app = ((MyApplication) getApplicationContext());
         String state = app.getState();
         int num = app.myNum;
-        Log.i(TAG, "onCreate");
+        Log.i(TAG, state);
+        Display display = ((WindowManager) getSystemService(WINDOW_SERVICE))
+                .getDefaultDisplay();
+        int orientation = display.getRotation();
+
+        if (orientation == Surface.ROTATION_90
+                || orientation == Surface.ROTATION_270) {
+            Log.i(TAG, "Screen is LandScape.");
+        } else
+            Log.i(TAG, "Screen is Portrait.");
 
 //        layouts = (Button) findViewById(R.id.layouts);
 //        inputControl = (Button) findViewById(R.id.inputControl);
@@ -63,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         inputControl.setOnClickListener(listener);
         lifeCycle.setOnClickListener(listener);
         customStyle.setOnClickListener(listener);
+        container.setOnClickListener(listener);
         memoryLeak.setOnClickListener(listener);
     }
 
@@ -106,6 +122,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.customStyle:
                     intent.setClass(MainActivity.this, CustomStyleActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.container:
+                    intent.setClass(MainActivity.this, ContainerSelectActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.memoryLeak:
