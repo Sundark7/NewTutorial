@@ -3,8 +3,12 @@ package com.example.g0294.tutorial.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.g0294.tutorial.R;
 
@@ -29,6 +33,8 @@ public class UserInterfaceActivity extends Activity {
         btn_ratoteImage.setOnClickListener(listener);
         btn_imageResize = (Button) findViewById(R.id.btn_imageResize);
         btn_imageResize.setOnClickListener(listener);
+        btn_toast = (Button) findViewById(R.id.btn_toast);
+        btn_toast.setOnClickListener(listener);
     }
 
     class SelectActivity implements View.OnClickListener {
@@ -59,6 +65,18 @@ public class UserInterfaceActivity extends Activity {
                 case R.id.btn_button:
                     intent.setClass(getApplicationContext(), ButtonActivity.class);
                     startActivity(intent);
+                    break;
+                case R.id.btn_toast:
+                    LayoutInflater inflater = getLayoutInflater();
+                    View customToast = inflater.inflate(R.layout.mytoast_layout, null);
+
+                    TextView text = (TextView) customToast.findViewById(R.id.tvContent);
+                    text.setText("This is a custom toast");
+                    Toast toast = new Toast(getApplicationContext());
+                    toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                    toast.setDuration(Toast.LENGTH_SHORT);
+                    toast.setView(customToast);
+                    toast.show();
                     break;
             }
         }
