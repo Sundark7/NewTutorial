@@ -35,6 +35,8 @@ public class UserInterfaceActivity extends Activity {
         btn_imageResize.setOnClickListener(listener);
         btn_toast = (Button) findViewById(R.id.btn_toast);
         btn_toast.setOnClickListener(listener);
+        btn_checkBox = (Button) findViewById(R.id.btn_checkBox);
+        btn_checkBox.setOnClickListener(listener);
     }
 
     class SelectActivity implements View.OnClickListener {
@@ -64,6 +66,10 @@ public class UserInterfaceActivity extends Activity {
                     break;
                 case R.id.btn_button:
                     intent.setClass(getApplicationContext(), ButtonActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_checkBox:
+                    intent.setClass(getApplicationContext(), CheckBoxActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.btn_toast:

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="選擇喜愛的球類：" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/baseball"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="棒球" />
+
+        <CheckBox
+            android:id="@+id/basketball"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="籃球" />
+
+        <CheckBox
+            android:id="@+id/tennis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="網球" />
+
+        <CheckBox
+            android:id="@+id/table_tennis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="桌球" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="確定" />
+</LinearLayout>
