@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.g0294.tutorial.activitylifecycle.ActivityA;
 import com.example.g0294.tutorial.adapterview.ContainerSelectActivity;
 import com.example.g0294.tutorial.customstyle.CustomStyleActivity;
+import com.example.g0294.tutorial.fragments.FragmentExActivity;
 import com.example.g0294.tutorial.layouts.LayoutsActivity;
 import com.example.g0294.tutorial.memoryleak.MemoryOne;
 import com.example.g0294.tutorial.ui.UserInterfaceActivity;
@@ -38,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     Button memoryLeak;
     @Bind(R.id.container)
     Button container;
+    @Bind(R.id.fragment)
+    Button fragment;
 
     @Override
     protected void onDestroy() {
@@ -48,24 +51,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.i(TAG, "onRestoreInstanceState()");
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         /* Applicaiton Variable */
-        MyApplication app = ((MyApplication) getApplicationContext());
-        String state = app.getState();
-        int num = app.myNum;
-        Log.i(TAG, state);
+//        MyApplication app = ((MyApplication) getApplicationContext());
+//        String state = app.getState();
+//        int num = app.myNum;
+//        Log.i(TAG, state);
         Display display = ((WindowManager) getSystemService(WINDOW_SERVICE))
                 .getDefaultDisplay();
         int orientation = display.getRotation();
 
         if (orientation == Surface.ROTATION_90
                 || orientation == Surface.ROTATION_270) {
-            Log.i(TAG, "Screen is LandScape.");
+            Log.i(TAG, "OnCreate: Screen is LandScape.");
         } else
-            Log.i(TAG, "Screen is Portrait.");
+            Log.i(TAG, "OnCreate: Screen is Portrait.");
 
 //        layouts = (Button) findViewById(R.id.layouts);
 //        inputControl = (Button) findViewById(R.id.inputControl);
@@ -80,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         customStyle.setOnClickListener(listener);
         container.setOnClickListener(listener);
         memoryLeak.setOnClickListener(listener);
+        fragment.setOnClickListener(listener);
     }
 
     @Override
@@ -130,6 +140,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.memoryLeak:
                     intent.setClass(MainActivity.this, MemoryOne.class);
+                    startActivity(intent);
+                    break;
+                case R.id.fragment:
+                    intent.setClass(MainActivity.this, FragmentExActivity.class);
                     startActivity(intent);
                     break;
             }

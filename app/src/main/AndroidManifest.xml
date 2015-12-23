@@ -4,7 +4,6 @@
 
     <application
         android:allowBackup="true"
-        android:name=".MyApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -60,6 +59,10 @@
         <activity android:name=".adapterview.ArrayAdapterActivity" />
         <activity android:name=".adapterview.BaseAdapterActivity" />
         <activity android:name=".adapterview.GridViewActivity" />
+        <activity android:name=".fragments.LifeCycle" />
+        <activity android:name=".fragments.FragmentExActivity" />
+        <activity android:name=".fragments.FragmentCallBackActivity" />
+        <activity android:name=".fragments.MainActivity" />
     </application>
 
 </manifest>

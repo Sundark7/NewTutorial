@@ -23,6 +23,12 @@
         android:text="@string/Life_Cycle" />
 
     <Button
+        android:id="@+id/fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fragment" />
+
+    <Button
         android:id="@+id/inputControl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
