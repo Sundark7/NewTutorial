@@ -18,6 +18,7 @@ import com.example.g0294.tutorial.customstyle.CustomStyleActivity;
 import com.example.g0294.tutorial.fragments.FragmentExActivity;
 import com.example.g0294.tutorial.layouts.LayoutsActivity;
 import com.example.g0294.tutorial.memoryleak.MemoryOne;
+import com.example.g0294.tutorial.multithread.ThreadMenuActivity;
 import com.example.g0294.tutorial.ui.UserInterfaceActivity;
 
 import butterknife.Bind;
@@ -26,7 +27,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
     String TAG = "MainActivity";
-    //    protected Button layouts, inputControl, lifeCycle, customStyle, memoryLeak;
+    // protected Button layouts, inputControl, lifeCycle, customStyle, memoryLeak;
     @Bind(R.id.layouts)
     Button layouts;
     @Bind(R.id.lifeCycle)
@@ -41,13 +42,15 @@ public class MainActivity extends AppCompatActivity {
     Button container;
     @Bind(R.id.fragment)
     Button fragment;
+    @Bind(R.id.multiThread)
+    Button multiThread;
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.i(TAG, "onDestroy");
-        //Applcation 實際未完全關閉
-//        System.exit(0);
+        // Applcation 實際未完全關閉
+        // System.exit(0);
     }
 
     @Override
@@ -61,26 +64,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        /* Applicaiton Variable */
-//        MyApplication app = ((MyApplication) getApplicationContext());
-//        String state = app.getState();
-//        int num = app.myNum;
-//        Log.i(TAG, state);
-        Display display = ((WindowManager) getSystemService(WINDOW_SERVICE))
-                .getDefaultDisplay();
+    /* Applicaiton Variable */
+        // MyApplication app = ((MyApplication) getApplicationContext());
+        // String state = app.getState();
+        // int num = app.myNum;
+        // Log.i(TAG, state);
+        Display display = ((WindowManager) getSystemService(WINDOW_SERVICE)).getDefaultDisplay();
         int orientation = display.getRotation();
 
-        if (orientation == Surface.ROTATION_90
-                || orientation == Surface.ROTATION_270) {
+        if (orientation == Surface.ROTATION_90 || orientation == Surface.ROTATION_270) {
             Log.i(TAG, "OnCreate: Screen is LandScape.");
         } else
             Log.i(TAG, "OnCreate: Screen is Portrait.");
 
-//        layouts = (Button) findViewById(R.id.layouts);
-//        inputControl = (Button) findViewById(R.id.inputControl);
-//        lifeCycle = (Button) findViewById(R.id.lifeCycle);
-//        customStyle = (Button) findViewById(R.id.customStyle);
-//        memoryLeak = (Button) findViewById(R.id.memoryLeak);
+        // layouts = (Button) findViewById(R.id.layouts);
+        // inputControl = (Button) findViewById(R.id.inputControl);
+        // lifeCycle = (Button) findViewById(R.id.lifeCycle);
+        // customStyle = (Button) findViewById(R.id.customStyle);
+        // memoryLeak = (Button) findViewById(R.id.memoryLeak);
 
         MainClickListener listener = new MainClickListener();
         layouts.setOnClickListener(listener);
@@ -90,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         container.setOnClickListener(listener);
         memoryLeak.setOnClickListener(listener);
         fragment.setOnClickListener(listener);
+        multiThread.setOnClickListener(listener);
     }
 
     @Override
@@ -144,6 +146,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.fragment:
                     intent.setClass(MainActivity.this, FragmentExActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.multiThread:
+                    intent.setClass(MainActivity.this, ThreadMenuActivity.class);
                     startActivity(intent);
                     break;
             }
