@@ -64,4 +64,13 @@
 
     <string name="close">Close</string>
     <string name="dialog">Dialog</string>
+
+    <string name="spinner_prompt">提示字元!</string>
+    <string-array name="languages">
+        <item>c語言</item>
+        <item>java </item>
+        <item>php</item>
+        <item>xml</item>
+        <item>html</item>
+    </string-array>
 </resources>

@@ -2,54 +2,60 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <Button
-        android:id="@+id/btn_listView"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ListView" />
+        android:text="Name" />
 
-    <Button
-        android:id="@+id/btn_arrayList"
+    <EditText
+        android:id="@+id/nameField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ListView with ArrayAdapter" />
+        android:hint="Input your name"
+        android:singleLine="true" />
 
-    <Button
-        android:id="@+id/btn_simpleList"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ListView with SimpleAdapter" />
+        android:text="Phone" />
 
-    <Button
-        android:id="@+id/btn_baseList"
+    <EditText
+        android:id="@+id/phoneField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ListView with BaseAdapter" />
+        android:hint="0987654321"
+        android:singleLine="true" />
 
-    <Button
-        android:id="@+id/btn_gridView"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GridView" />
+        android:text="Sex" />
 
-    <Button
-        android:id="@+id/btn_expandable"
+    <EditText
+        android:id="@+id/sexField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Expandable List View" />
+        android:hint="Male/Female"
+        android:singleLine="true" />
 
     <Button
-        android:id="@+id/btn_autoComplete"
+        android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="AutoComplete TextView" />
+        android:text="Save" />
 
     <Button
-        android:id="@+id/btn_spanner"
+        android:id="@+id/clearButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Spanner" />
+        android:text="Clear" />
+
+    <Button
+        android:id="@+id/readButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Read" />
 </LinearLayout>
