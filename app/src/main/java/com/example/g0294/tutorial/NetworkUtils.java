@@ -5,12 +5,12 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
@@ -19,7 +19,6 @@ import java.net.URLEncoder;
 public class NetworkUtils {
 
     private static String TAG = "NetworkUtils";
-    private static int len = 512;
 
     public static String getData(String mUrl) throws IOException {
 
@@ -27,12 +26,12 @@ public class NetworkUtils {
         try {
             URL url = new URL(mUrl);
             //建立連結
-//            URLConnection urlConn = url.openConnection();
-//            if (!(urlConn instanceof HttpURLConnection)) {
-//                throw new IOException ("URL is not an Http URL");
-//            }
-//            HttpURLConnection httpConn = (HttpURLConnection)urlConn;
-            HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+      URLConnection urlConn = url.openConnection();
+      if (!(urlConn instanceof HttpURLConnection)) {
+        throw new IOException("URL is not an Http URL");
+      }
+      HttpURLConnection httpConn = (HttpURLConnection) urlConn;
+      // HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
             httpConn.setReadTimeout(10 * 1000 /* milliseconds */);
             httpConn.setConnectTimeout(15 * 1000 /* milliseconds */);
             httpConn.setRequestMethod("GET");
@@ -41,7 +40,7 @@ public class NetworkUtils {
             if (httpConn.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 inputStream = httpConn.getInputStream();
 
-                return readIt(inputStream, len);
+        return readIt(inputStream);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -84,10 +83,11 @@ public class NetworkUtils {
             out.write(postContent.getBytes());
             out.flush();
             out.close();
+
             if (httpConn.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 inputStream = httpConn.getInputStream();
 
-                return readIt(inputStream, len);
+        return readIt(inputStream);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -156,12 +156,14 @@ public class NetworkUtils {
         return null;
     }
 
-    public static String readIt(InputStream stream, int len) throws IOException {
-        Reader reader;
-        reader = new InputStreamReader(stream, "UTF-8");
-        char[] buffer = new char[len];
-        reader.read(buffer);
-        return new String(buffer);
+  public static String readIt(InputStream stream) throws IOException {
+    StringBuilder builder = new StringBuilder();
+    BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"));
+    String line;
+    while ((line = reader.readLine()) != null) {
+      builder.append(line);
+    }
+    return builder.toString();
     }
 
     public static boolean isNetworkAvailable(Context context) {
