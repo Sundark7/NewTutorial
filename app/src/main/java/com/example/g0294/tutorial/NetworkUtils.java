@@ -4,6 +4,9 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
+import android.util.Xml;
+
+import org.xmlpull.v1.XmlPullParser;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -11,6 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
@@ -26,12 +30,12 @@ public class NetworkUtils {
         try {
             URL url = new URL(mUrl);
             //建立連結
-      URLConnection urlConn = url.openConnection();
-      if (!(urlConn instanceof HttpURLConnection)) {
-        throw new IOException("URL is not an Http URL");
-      }
-      HttpURLConnection httpConn = (HttpURLConnection) urlConn;
-      // HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+            URLConnection urlConn = url.openConnection();
+            if (!(urlConn instanceof HttpURLConnection)) {
+                throw new IOException("URL is not an Http URL");
+            }
+            HttpURLConnection httpConn = (HttpURLConnection) urlConn;
+            // HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
             httpConn.setReadTimeout(10 * 1000 /* milliseconds */);
             httpConn.setConnectTimeout(15 * 1000 /* milliseconds */);
             httpConn.setRequestMethod("GET");
@@ -40,7 +44,7 @@ public class NetworkUtils {
             if (httpConn.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 inputStream = httpConn.getInputStream();
 
-        return readIt(inputStream);
+                return readIt(inputStream);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -87,7 +91,7 @@ public class NetworkUtils {
             if (httpConn.getResponseCode() == HttpURLConnection.HTTP_OK) {
                 inputStream = httpConn.getInputStream();
 
-        return readIt(inputStream);
+                return readIt(inputStream);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -156,14 +160,14 @@ public class NetworkUtils {
         return null;
     }
 
-  public static String readIt(InputStream stream) throws IOException {
-    StringBuilder builder = new StringBuilder();
-    BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"));
-    String line;
-    while ((line = reader.readLine()) != null) {
-      builder.append(line);
-    }
-    return builder.toString();
+    public static String readIt(InputStream stream) throws IOException {
+        StringBuilder builder = new StringBuilder();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            builder.append(line);
+        }
+        return builder.toString();
     }
 
     public static boolean isNetworkAvailable(Context context) {
@@ -181,6 +185,52 @@ public class NetworkUtils {
         }
 
         return (networkInfo != null && networkInfo.isConnected());
+    }
+
+    public static void XMLParser(String mContent) {
+
+        try {
+//            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+//            factory.setNamespaceAware(false); //default false; 可省略
+//            XmlPullParser parser = factory.newPullParser();
+            XmlPullParser parser = Xml.newPullParser();
+            parser.setInput(new StringReader(mContent));
+
+            int event = parser.getEventType();
+            while (event != XmlPullParser.END_DOCUMENT) {
+                switch (event) {
+                    case XmlPullParser.START_DOCUMENT:
+                        break;
+                    case XmlPullParser.START_TAG:
+                        Log.d("XMLParser", "The Start TAG: " + parser.getName());
+//                        if ("SiteName".equals(parser.getName())) {
+//                            Log.d("XMLParser", "SiteName: " + parser.nextText());
+//                        } else if ("County".equals(parser.getName())) {
+//                            Log.d("XMLParser", "County: " + parser.nextText());
+//                        } else if ("PM2.5".equals(parser.getName())) {
+//                            Log.d("XMLParser", "PM2.5: " + parser.nextText());
+//                        } else if ("PublishTime".equals(parser.getName())) {
+//                            Log.d("XMLParser", "PublishTime: " + parser.nextText());
+//                        }
+
+//                        if ("EstimateTime".equals(parser.getName())) {
+//                            Log.d("XMLParser", "StopID: " + parser.getAttributeValue(null,"StopID"));
+//                            Log.d("XMLParser", "SID: " + parser.getAttributeValue(null,"SID"));
+//                            Log.d("XMLParser", "StopName: " + parser.getAttributeValue(2));
+//                        }
+                        break;
+                    case XmlPullParser.TEXT:
+                        Log.d("XMLParser", "The TEXT: " + parser.getText());
+                        break;
+                    case XmlPullParser.END_TAG:
+                        Log.d("XMLParser", "The END TAG: " + parser.getName());
+                        break;
+                }
+                event = parser.next();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
