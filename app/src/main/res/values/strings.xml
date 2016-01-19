@@ -73,4 +73,10 @@
         <item>xml</item>
         <item>html</item>
     </string-array>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="Taipei101">台北101</string>
+    <string name="EDA">義大</string>
+    <string name="zoom_in">＋</string>
+    <string name="zoom_out">－</string>
 </resources>

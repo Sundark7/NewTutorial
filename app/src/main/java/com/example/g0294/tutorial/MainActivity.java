@@ -15,7 +15,9 @@ import android.widget.Toast;
 import com.example.g0294.tutorial.activitylifecycle.ActivityA;
 import com.example.g0294.tutorial.adapterview.ContainerSelectActivity;
 import com.example.g0294.tutorial.customstyle.CustomStyleActivity;
+import com.example.g0294.tutorial.datastorage.StorageChoseActivity;
 import com.example.g0294.tutorial.fragments.FragmentExActivity;
+import com.example.g0294.tutorial.gmap.gMapMenu;
 import com.example.g0294.tutorial.layouts.LayoutsActivity;
 import com.example.g0294.tutorial.memoryleak.MemoryOne;
 import com.example.g0294.tutorial.multithread.ThreadMenuActivity;
@@ -44,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
     Button fragment;
     @Bind(R.id.multiThread)
     Button multiThread;
+    @Bind(R.id.dataStorage)
+    Button dataStorage;
+    @Bind(R.id.gMap)
+    Button gMap;
 
     @Override
     protected void onDestroy() {
@@ -92,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
         memoryLeak.setOnClickListener(listener);
         fragment.setOnClickListener(listener);
         multiThread.setOnClickListener(listener);
+        dataStorage.setOnClickListener(listener);
+        gMap.setOnClickListener(listener);
     }
 
     @Override
@@ -146,10 +154,19 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.fragment:
                     intent.setClass(MainActivity.this, FragmentExActivity.class);
+
                     startActivity(intent);
                     break;
                 case R.id.multiThread:
                     intent.setClass(MainActivity.this, ThreadMenuActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.dataStorage:
+                    intent.setClass(MainActivity.this, StorageChoseActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.gMap:
+                    intent.setClass(MainActivity.this, gMapMenu.class);
                     startActivity(intent);
                     break;
             }

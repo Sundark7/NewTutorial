@@ -4,6 +4,14 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -51,11 +59,11 @@
             android:theme="@android:style/Theme.Dialog" />
         <activity android:name=".customstyle.CustomStyleActivity" />
         <activity android:name=".ui.ImageZoomActivity" />
-        <activity android:name=".memoryleak.StaticInstance"/>
-        <activity android:name=".memoryleak.MemoryOne"/>
-        <activity android:name=".memoryleak.MemoryTwo"/>
-        <activity android:name=".ui.ImageResizeActivity"/>
-        <activity android:name=".layouts.InflateActivity"/>
+        <activity android:name=".memoryleak.StaticInstance" />
+        <activity android:name=".memoryleak.MemoryOne" />
+        <activity android:name=".memoryleak.MemoryTwo" />
+        <activity android:name=".ui.ImageResizeActivity" />
+        <activity android:name=".layouts.InflateActivity" />
         <activity android:name=".adapterview.ContainerSelectActivity" />
         <activity android:name=".adapterview.ListViewAttrActivity" />
         <activity android:name=".adapterview.SimpleAdapterActivity" />
@@ -71,6 +79,33 @@
         <activity android:name=".multithread.HandlerActivity" />
         <activity android:name=".multithread.ThreadMenuActivity" />
         <activity android:name=".multithread.VolleyActivity" />
+        <activity android:name=".adapterview.ExpandableListViewActivity" />
+        <activity android:name=".datastorage.FileActivity" />
+        <activity android:name=".datastorage.StorageChoseActivity" />
+        <activity android:name=".datastorage.SharedPreferencesActivity" />
+        <activity android:name=".datastorage.SQLiteDemo" />
+        <activity android:name=".adapterview.SpinnerActivity" />
+        <activity android:name=".adapterview.AutoCompleteActivity" />
+        <activity android:name=".gmap.gMapMenu" />
+        <activity android:name=".gmap.MapOptionActivity" />
+        <activity android:name=".gmap.getLastLocationActivity" />
+        <activity android:name=".gmap.updateLocationActivity" />
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".gmap.MapsActivity"
+            android:label="@string/title_activity_maps" />
     </application>
 
 </manifest>
