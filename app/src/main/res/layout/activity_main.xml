@@ -72,6 +72,12 @@
                 android:layout_height="wrap_content"
                 android:text="Data Storage" />
 
+            <Button
+                android:id="@+id/gMap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Google Map" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
