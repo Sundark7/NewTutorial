@@ -90,7 +90,12 @@
         <activity android:name=".gmap.MapOptionActivity" />
         <activity android:name=".gmap.getLastLocationActivity" />
         <activity android:name=".gmap.updateLocationActivity" />
-
+        <activity android:name=".ui.ProgressBarActivity" />
+        <activity android:name=".ui.SeekRatingBarActivity" />
+        <activity android:name=".ui.AlertDialogActivity"/>
+        <activity android:name=".ui.RadioButtonActivity"/>
+        <activity android:name=".ui.WebViewActivity"/>
+        <activity android:name=".ui.AndroidViewActivity"/>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

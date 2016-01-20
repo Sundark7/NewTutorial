@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp">
+
+    <Button
+        android:id="@+id/btn_alertDialog_basic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="基本AlertDialog" />
+
+    <Button
+        android:id="@+id/btn_alertDialog_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="帶有Button的AlertDialog" />
+
+    <Button
+        android:id="@+id/btn_alertDialog_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="帶有List的AlertDialog" />
+
+    <Button
+        android:id="@+id/btn_alertDialog_custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定義的AlertDialog" />
+
+    <Button
+        android:id="@+id/btn_progressDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Progress Dialog" />
+
+</LinearLayout>

@@ -14,7 +14,8 @@ import com.example.g0294.tutorial.R;
 
 public class UserInterfaceActivity extends Activity {
     private Button btn_textView, btn_editText, btn_imageView, btn_button, btn_ratoteImage, btn_imageResize,
-            btn_checkBox, btn_radioButton, btn_datetimePicker, btn_progressBar, btn_seekBar, btn_toast;
+            btn_checkBox, btn_radioButton, btn_datetimePicker, btn_progressBar, btn_seekBar, btn_toast,
+            btn_alertDialog, btn_webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,16 @@ public class UserInterfaceActivity extends Activity {
         btn_toast.setOnClickListener(listener);
         btn_checkBox = (Button) findViewById(R.id.btn_checkBox);
         btn_checkBox.setOnClickListener(listener);
+        btn_progressBar = (Button) findViewById(R.id.btn_progressBar);
+        btn_progressBar.setOnClickListener(listener);
+        btn_seekBar = (Button) findViewById(R.id.btn_seekBar);
+        btn_seekBar.setOnClickListener(listener);
+        btn_alertDialog = (Button) findViewById(R.id.btn_alertDialog);
+        btn_alertDialog.setOnClickListener(listener);
+        btn_radioButton = (Button) findViewById(R.id.btn_radioButton);
+        btn_radioButton.setOnClickListener(listener);
+        btn_webView = (Button) findViewById(R.id.btn_webView);
+        btn_webView.setOnClickListener(listener);
     }
 
     class SelectActivity implements View.OnClickListener {
@@ -70,6 +81,26 @@ public class UserInterfaceActivity extends Activity {
                     break;
                 case R.id.btn_checkBox:
                     intent.setClass(getApplicationContext(), CheckBoxActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_progressBar:
+                    intent.setClass(getApplicationContext(), ProgressBarActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_seekBar:
+                    intent.setClass(getApplicationContext(), SeekRatingBarActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_alertDialog:
+                    intent.setClass(getApplicationContext(), AlertDialogActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_radioButton:
+                    intent.setClass(getApplicationContext(), RadioButtonActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_webView:
+                    intent.setClass(getApplicationContext(), WebViewActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.btn_toast:

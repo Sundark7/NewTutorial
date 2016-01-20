@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/radiogroup_info_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="請選擇的性別?"
+        android:textSize="20sp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup_sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/boy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="男" />
+
+        <RadioButton
+            android:id="@+id/girl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="女" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/radio_clear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="重置" />
+
+    <Button
+        android:id="@+id/radio_add_child"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="新增選項" />
+</LinearLayout>
