@@ -13,7 +13,6 @@
     <string name="home">首頁</string>
     <string name="Layouts">Layouts</string>
     <string name="User_Interface">Input Control</string>
-    <string name="rotate_image">旋轉圖形</string>
     <string name="memory_leak">記憶體洩漏</string>
     <string name="text_view">Text View</string>
     <string name="your_age">%1$s，出生於西元%2$d，現年%3$d歲。</string>
