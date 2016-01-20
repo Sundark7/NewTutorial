@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.widget.Toast;
@@ -13,11 +14,12 @@ import android.widget.Toast;
 import com.example.g0294.tutorial.R;
 
 public class WebViewActivity extends Activity {
+    WebView browser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview_layout);
-        WebView browser;
+
         browser = (WebView) findViewById(R.id.webView);
         // Enable Javascript
         browser.getSettings().setJavaScriptEnabled(true);
@@ -28,7 +30,15 @@ public class WebViewActivity extends Activity {
 //        browser.loadUrl("http://ycnas.myds.me/androidjs.html");
         browser.loadUrl("http://tw.yahoo.com");
     }
-
+    //
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK) && browser.canGoBack()) {
+            browser.goBack();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
     // Class to be injected in Web page
     public class WebAppInterface {
         Context mContext;

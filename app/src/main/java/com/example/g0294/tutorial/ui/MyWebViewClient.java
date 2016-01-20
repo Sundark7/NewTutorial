@@ -17,6 +17,8 @@ public class MyWebViewClient extends WebViewClient{
     public MyWebViewClient(Activity act) {
         super();
         mActivity = act;
+        myDialog = new ProgressDialog(mActivity);
+        myDialog.setTitle("載入中");
     }
 
     @Override
@@ -33,20 +35,18 @@ public class MyWebViewClient extends WebViewClient{
     @Override
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
         super.onPageStarted(view, url, favicon);
-        myDialog=ProgressDialog.show(mActivity, "資料讀取中...", "");
+        myDialog.show();
     }
 
     @Override
     public void onPageFinished(WebView view, String url) {
-        if (myDialog.isShowing())
-            myDialog.dismiss();
         super.onPageFinished(view, url);
+        myDialog.dismiss();
     }
 
     @Override
     public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
         super.onReceivedError(view, request, error);
-        if (myDialog.isShowing())
-            myDialog.dismiss();
+        myDialog.dismiss();
     }
 }
