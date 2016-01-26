@@ -21,6 +21,15 @@
 
     <uses-permission android:name="custom.permission.MY_BROADCAST_PERMISSION" />
 
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="com.example.g0294.tutorial.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.example.g0294.tutorial.permission.C2D_MESSAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -111,6 +120,9 @@
         <activity
             android:name=".broadcast.BroadcastReceiverActivity"
             android:label="Broadcast Receiver" />
+        <activity
+            android:name=".services.ServiceActivity"
+            android:label="Service" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -153,6 +165,29 @@
                 <action android:name="android.intent.action.MY_BROADCAST" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name=".services.MyStartService"
+            android:enabled="true"
+            android:label="start Service" />
+        <service
+            android:name=".services.MyBindService"
+            android:enabled="true"
+            android:label="bind Service" />
+        <service
+            android:name=".services.MyIntentService"
+            android:enabled="true"
+            android:label="Intent Service" />
+
+        <receiver
+            android:name=".gcm.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.RECEIVE">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.example.g0294.googlecloudmessaging" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".gcm.GCMIntentService" />
     </application>
 
 </manifest>

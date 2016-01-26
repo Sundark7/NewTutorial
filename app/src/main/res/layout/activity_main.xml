@@ -89,6 +89,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Broadcast Receiver" />
+
+            <Button
+                android:id="@+id/btn_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Service" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
