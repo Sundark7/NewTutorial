@@ -38,9 +38,9 @@ public class BroadcastReceiverActivity extends AppCompatActivity {
                 Intent intent = new Intent("android.intent.action.MY_BROADCAST");
                 intent.putExtra("msg", "Hello Receiver!");
                 //Normal Broadcast Receiver
-                //sendBroadcast(intent);
+                sendBroadcast(intent);
                 //Ordered Broadcast Receiver
-                sendOrderedBroadcast(intent, "custom.permission.MY_BROADCAST_PERMISSION");
+//                sendOrderedBroadcast(intent, "custom.permission.MY_BROADCAST_PERMISSION");
             }
         });
     }
