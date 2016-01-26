@@ -47,7 +47,8 @@
             android:label="@string/edit_text" />
         <activity
             android:name=".ui.ButtonActivity"
-            android:label="@string/button" />
+            android:label="@string/button"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ui.ImageViewActivity"
             android:label="@string/image_view" />
@@ -96,6 +97,9 @@
         <activity android:name=".ui.RadioButtonActivity"/>
         <activity android:name=".ui.WebViewActivity"/>
         <activity android:name=".ui.AndroidViewActivity"/>
+        <activity
+            android:name=".notification.NotificationActivity"
+            android:label="Notification" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

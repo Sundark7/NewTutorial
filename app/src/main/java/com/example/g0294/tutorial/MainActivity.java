@@ -21,6 +21,7 @@ import com.example.g0294.tutorial.gmap.gMapMenu;
 import com.example.g0294.tutorial.layouts.LayoutsActivity;
 import com.example.g0294.tutorial.memoryleak.MemoryOne;
 import com.example.g0294.tutorial.multithread.ThreadMenuActivity;
+import com.example.g0294.tutorial.notification.NotificationActivity;
 import com.example.g0294.tutorial.ui.UserInterfaceActivity;
 
 import butterknife.Bind;
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
     Button dataStorage;
     @Bind(R.id.gMap)
     Button gMap;
+    @Bind(R.id.btn_notification)
+    Button btnNotification;
 
     @Override
     protected void onDestroy() {
@@ -100,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         multiThread.setOnClickListener(listener);
         dataStorage.setOnClickListener(listener);
         gMap.setOnClickListener(listener);
+        btnNotification.setOnClickListener(listener);
     }
 
     @Override
@@ -167,6 +171,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.gMap:
                     intent.setClass(MainActivity.this, gMapMenu.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_notification:
+                    intent.setClass(MainActivity.this, NotificationActivity.class);
                     startActivity(intent);
                     break;
             }

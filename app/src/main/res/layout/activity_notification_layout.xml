@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <Button
+        android:id="@+id/btn_basicNotify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Basic Notitfication" />
+
+    <Button
+        android:id="@+id/btn_mutiNotify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mutiple Notification" />
+
+    <Button
+        android:id="@+id/btn_intentNotify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notification with Intent" />
+
+    <Button
+        android:id="@+id/btn_parentNotify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PendingIntent with Parent" />
+
+    <Button
+        android:id="@+id/btn_pictureNotify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Big Picture Style" />
+
+</LinearLayout>
