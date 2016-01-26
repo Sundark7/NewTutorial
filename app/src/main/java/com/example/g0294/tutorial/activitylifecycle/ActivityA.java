@@ -16,9 +16,9 @@
 
 package com.example.g0294.tutorial.activitylifecycle;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -29,7 +29,7 @@ import com.example.g0294.tutorial.activitylifecycle.util.Utils;
 /**
  * Example Activity to demonstrate the lifecycle callback methods.
  */
-public class ActivityA extends Activity {
+public class ActivityA extends AppCompatActivity {
 
     private String mActivityName;
     private TextView mStatusView;

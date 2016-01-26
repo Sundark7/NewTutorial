@@ -16,14 +16,14 @@
 
 package com.example.g0294.tutorial.activitylifecycle;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 
 import com.example.g0294.tutorial.R;
 
-public class DialogActivity extends Activity {
+public class DialogActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
