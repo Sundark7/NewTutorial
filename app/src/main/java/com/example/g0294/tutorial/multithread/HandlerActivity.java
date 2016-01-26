@@ -1,7 +1,6 @@
 package com.example.g0294.tutorial.multithread;
 
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -9,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -22,11 +22,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class HandlerActivity extends Activity {
+public class HandlerActivity extends AppCompatActivity {
 
+    private static final int DOWNLOAD_IMG = 1;
     private ImageView imageView;
     private ProgressDialog progressDialog;
-    private static final int DOWNLOAD_IMG = 1;
     private MyHandler handler;
 
     @Override
@@ -71,7 +71,7 @@ public class HandlerActivity extends Activity {
             byte[] data = (byte[]) msg.obj;
             Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
             imageView.setImageBitmap(bitmap);
-            if (msg.what == DOWNLOAD_IMG) {
+            if (msg.arg1 == DOWNLOAD_IMG) {
                 progressDialog.dismiss();
             }
         }
@@ -103,7 +103,9 @@ public class HandlerActivity extends Activity {
                     // 通過Message的方式，將PhotoByte發送給UI Thread。
                     Message message = Message.obtain();
                     message.obj = photoByte;
-                    message.what = DOWNLOAD_IMG;
+//                    message.what = DOWNLOAD_IMG;
+                    message.arg1 = DOWNLOAD_IMG;
+
                     handler.sendMessage(message);
                 }
             } catch (Exception e) {

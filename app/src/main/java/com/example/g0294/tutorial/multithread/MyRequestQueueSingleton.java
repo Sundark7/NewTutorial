@@ -14,9 +14,9 @@ public class MyRequestQueueSingleton {
     private static final String TAG = MyRequestQueueSingleton.class
             .getSimpleName();
     private static MyRequestQueueSingleton mInstance;
+    private static Context mCtx;
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
-    private static Context mCtx;
 
     private MyRequestQueueSingleton(Context context) {
         mCtx = context;
@@ -48,8 +48,6 @@ public class MyRequestQueueSingleton {
 
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
-            // getApplicationContext() is key, it keeps you from leaking the
-            // Activity or BroadcastReceiver if someone passes one in.
             mRequestQueue = Volley.newRequestQueue(mCtx.getApplicationContext());
         }
         return mRequestQueue;

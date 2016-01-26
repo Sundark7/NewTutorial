@@ -1,9 +1,9 @@
 package com.example.g0294.tutorial.multithread;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,7 +18,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class AsyncTaskActivity extends Activity {
+public class AsyncTaskActivity extends AppCompatActivity {
 
     //    private final String IMAGE_PATH =
 //            "http://developer.android.com/images/home/devices-hero_620px_2x.png";
@@ -48,7 +48,7 @@ public class AsyncTaskActivity extends Activity {
             public void onClick(View v) {
                 if (NetworkUtils.isNetworkAvailable(getApplicationContext())) {
                     mTask = new MyAsyncTask();
-                    mTask.execute(IMAGE_PATH);
+                    mTask.execute(KRT_Path);
                 }
             }
         });

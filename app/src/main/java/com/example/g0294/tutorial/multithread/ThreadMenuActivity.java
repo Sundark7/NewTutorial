@@ -1,20 +1,23 @@
 package com.example.g0294.tutorial.multithread;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-public class ThreadMenuActivity extends Activity {
+import com.example.g0294.tutorial.datastorage.SQLiteDemo;
+
+public class ThreadMenuActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LinearLayout rootView = new LinearLayout(this);
         rootView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         rootView.setOrientation(LinearLayout.VERTICAL);
+        rootView.setPadding(16, 16, 16, 16);
 
         Button btn1 = new Button(this);
         btn1.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -53,7 +56,7 @@ public class ThreadMenuActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(getApplicationContext(), VolleyActivity.class);
+                intent.setClass(getApplicationContext(), SQLiteDemo.class);
                 startActivity(intent);
             }
         });
