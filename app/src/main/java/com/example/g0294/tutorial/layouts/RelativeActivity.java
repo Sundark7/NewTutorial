@@ -1,8 +1,8 @@
 package com.example.g0294.tutorial.layouts;
 
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.example.g0294.tutorial.R;
 
-public class RelativeActivity extends Activity {
+public class RelativeActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

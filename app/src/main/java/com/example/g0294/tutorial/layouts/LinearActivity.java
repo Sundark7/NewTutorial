@@ -1,12 +1,14 @@
 package com.example.g0294.tutorial.layouts;
 
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
+import android.widget.TextView;
 
 import com.example.g0294.tutorial.R;
 
-public class LinearActivity extends Activity {
+public class LinearActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,10 +17,10 @@ public class LinearActivity extends Activity {
 //        rootView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 //        rootView.setOrientation(LinearLayout.VERTICAL);
 //
-//        TextView tv_acc = new TextView(this);
+        TextView tv_acc = new TextView(this);
 //        tv_acc.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 //        tv_acc.setPadding(5, 5, 5, 5); //unit pixel
-//        tv_acc.setGravity(Gravity.CENTER);
+        tv_acc.setGravity(Gravity.CENTER);
 //        tv_acc.setText(R.string.account);
 //        tv_acc.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18);
 //        rootView.addView(tv_acc);

@@ -1,13 +1,13 @@
 package com.example.g0294.tutorial.layouts;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.g0294.tutorial.R;
 
-public class InflateActivity extends Activity{
+public class InflateActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
