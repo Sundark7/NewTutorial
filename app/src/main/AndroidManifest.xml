@@ -13,6 +13,14 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <permission
+        android:name="custom.permission.MY_BROADCAST_PERMISSION"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="custom.permission.MY_BROADCAST_PERMISSION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -100,6 +108,9 @@
         <activity
             android:name=".notification.NotificationActivity"
             android:label="Notification" />
+        <activity
+            android:name=".broadcast.BroadcastReceiverActivity"
+            android:label="Broadcast Receiver" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -115,6 +126,33 @@
         <activity
             android:name=".gmap.MapsActivity"
             android:label="@string/title_activity_maps" />
+
+        <receiver
+            android:name=".broadcast.StaticBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.g0294.tutorial.broadcast" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".broadcast.FirstReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="111">
+                <action android:name="android.intent.action.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcast.SecondReceiver">
+            <intent-filter android:priority="222">
+                <action android:name="android.intent.action.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcast.ThirdReceiver">
+            <intent-filter android:priority="333">
+                <action android:name="android.intent.action.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

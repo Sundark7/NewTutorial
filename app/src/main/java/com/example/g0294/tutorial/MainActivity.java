@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.g0294.tutorial.activitylifecycle.ActivityA;
 import com.example.g0294.tutorial.adapterview.ContainerSelectActivity;
+import com.example.g0294.tutorial.broadcast.BroadcastReceiverActivity;
 import com.example.g0294.tutorial.customstyle.CustomStyleActivity;
 import com.example.g0294.tutorial.datastorage.StorageChoseActivity;
 import com.example.g0294.tutorial.fragments.FragmentExActivity;
@@ -53,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
     Button gMap;
     @Bind(R.id.btn_notification)
     Button btnNotification;
+    @Bind(R.id.btn_broadcast)
+    Button btnBroadcast;
 
     @Override
     protected void onDestroy() {
@@ -104,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
         dataStorage.setOnClickListener(listener);
         gMap.setOnClickListener(listener);
         btnNotification.setOnClickListener(listener);
+        btnBroadcast.setOnClickListener(listener);
     }
 
     @Override
@@ -175,6 +179,10 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_notification:
                     intent.setClass(MainActivity.this, NotificationActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_broadcast:
+                    intent.setClass(MainActivity.this, BroadcastReceiverActivity.class);
                     startActivity(intent);
                     break;
             }
