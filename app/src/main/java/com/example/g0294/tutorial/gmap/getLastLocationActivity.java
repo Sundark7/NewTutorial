@@ -112,4 +112,5 @@ public class getLastLocationActivity extends FragmentActivity implements OnMapRe
         }
         Log.d(TAG, connectionResult.toString());
     }
+
 }

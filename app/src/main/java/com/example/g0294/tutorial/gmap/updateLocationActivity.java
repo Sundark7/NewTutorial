@@ -66,6 +66,7 @@ public class updateLocationActivity extends FragmentActivity implements OnMapRea
         if (!mGoogleApiClient.isConnected()) {
             mGoogleApiClient.connect();
         }
+
         super.onStart();
     }
 
@@ -80,7 +81,6 @@ public class updateLocationActivity extends FragmentActivity implements OnMapRea
     @Override
     public void onConnected(Bundle bundle) {
         startLocationUpdates();
-
     }
 
     //建立Location請求
