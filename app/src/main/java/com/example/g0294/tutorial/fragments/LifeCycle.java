@@ -1,22 +1,22 @@
 package com.example.g0294.tutorial.fragments;
 
-import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.g0294.tutorial.R;
 
-public class LifeCycle extends Activity implements View.OnClickListener {
+public class LifeCycle extends AppCompatActivity implements View.OnClickListener {
     String TAG = "Fragment Activity";
+    Fragment3 fragment3 = new Fragment3();
+    Fragment4 fragment4 = new Fragment4();
     private FragmentManager manager;
     private FragmentTransaction transaction;
     private Button button1, button2, button3, button4;
-    Fragment3 fragment3 = new Fragment3();
-    Fragment4 fragment4 = new Fragment4();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +26,10 @@ public class LifeCycle extends Activity implements View.OnClickListener {
         manager = getFragmentManager();
 
         if (savedInstanceState == null) {
-//            manager.beginTransaction().add(R.id.right, new Fragment1(), "fragment1").commit();
-//            manager.beginTransaction().add(R.id.right, new Fragment2(), "fragment2").commit();
+            manager.beginTransaction()
+                    .add(R.id.right, new Fragment1(), "fragment1")
+                    .commit();
+            manager.beginTransaction().add(R.id.right, new Fragment2(), "fragment2").commit();
         }
         button1 = (Button) this.findViewById(R.id.button1);
         button1.setOnClickListener(this);
@@ -72,7 +74,6 @@ public class LifeCycle extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         transaction = manager.beginTransaction();
-
         switch (v.getId()) {
             case R.id.button1:
                 Fragment1 fragment1 = new Fragment1();

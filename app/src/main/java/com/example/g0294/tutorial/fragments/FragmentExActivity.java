@@ -1,12 +1,12 @@
 package com.example.g0294.tutorial.fragments;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.example.g0294.tutorial.R;
 
-public class FragmentExActivity extends Activity {
+public class FragmentExActivity extends AppCompatActivity {
     String TAG = "FragmentExActivity";
 
     @Override

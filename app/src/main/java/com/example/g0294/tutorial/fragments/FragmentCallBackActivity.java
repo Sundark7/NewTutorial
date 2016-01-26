@@ -35,9 +35,9 @@ public class FragmentCallBackActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 從Call Back接口取得fragment中EditText的值
-                leftFragment.getEditText(new LeftFragment.CallBack() {
+                leftFragment.getEditText(new LeftFragment.Linter() {
                     @Override
-                    public void getResult(String result) {
+                    public void getResult(String result, String res) {
                         Toast.makeText(FragmentCallBackActivity.this, result, Toast.LENGTH_SHORT).show();
                         textView.setText(result);
                     }

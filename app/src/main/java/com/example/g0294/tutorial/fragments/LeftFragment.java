@@ -25,14 +25,15 @@ public class LeftFragment extends Fragment {
     }
 
     // Call Back接口
-    public void getEditText(CallBack callBack) {
+    public void getEditText(Linter linter) {
         String msg = editText.getText().toString();
-        callBack.getResult(msg);
+        String tes = "";
+        linter.getResult(msg, tes);
     }
 
     /* 接口 */
-    public interface CallBack {
+    public interface Linter {
         /*定義取得訊息的方法*/
-        void getResult(String result);
+        void getResult(String result, String res);
     }
 }

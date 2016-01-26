@@ -1,7 +1,7 @@
 package com.example.g0294.tutorial.fragments;
 
-import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,25 +12,23 @@ import android.widget.Button;
 
 import com.example.g0294.tutorial.R;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-
 public class StaticFragment extends Fragment {
     private final String TAG = "StaticFragment";
-    @Bind(R.id.fragLifeCycle)
-    Button fragLifeCycle;
-    @Bind(R.id.multiPlane)
-    Button multiPlane;
-    @Bind(R.id.fg_Interaction)
-    Button fg_Interaction;
+//    @Bind(R.id.fragLifeCycle)
+//    Button fragLifeCycle;
+//    @Bind(R.id.multiPlane)
+//    Button multiPlane;
+//    @Bind(R.id.fg_Interaction)
+//    Button fg_Interaction;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.i(TAG, "onCreateView");
         View view = inflater.inflate(R.layout.fragment_layout, null);
-        ButterKnife.bind(this, view);
+//        ButterKnife.bind(this, view);
 
-        return view;
+//        return view;
+        return inflater.inflate(R.layout.fragment_layout, null);
     }
 
     @Override
@@ -40,8 +38,8 @@ public class StaticFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
+    public void onAttach(Context context) {
+        super.onAttach(context);
         Log.i(TAG, "onAttach");
     }
 
@@ -49,7 +47,7 @@ public class StaticFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         Log.i(TAG, "onDestroyView");
-        ButterKnife.unbind(this);
+//        ButterKnife.unbind(this);
     }
 
     @Override
@@ -62,6 +60,8 @@ public class StaticFragment extends Fragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Log.i(TAG, "onActivityCreated");
+        View view = getView();
+        Button fragLifeCycle = (Button) view.findViewById(R.id.fragLifeCycle);
         fragLifeCycle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +70,7 @@ public class StaticFragment extends Fragment {
                 getActivity().startActivity(intent);
             }
         });
+        Button fg_Interaction = (Button) view.findViewById(R.id.fg_Interaction);
         fg_Interaction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,6 +79,7 @@ public class StaticFragment extends Fragment {
                 getActivity().startActivity(intent);
             }
         });
+        Button multiPlane = (Button) view.findViewById(R.id.multiPlane);
         multiPlane.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
