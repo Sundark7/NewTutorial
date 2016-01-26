@@ -1,7 +1,7 @@
 package com.example.g0294.tutorial.adapterview;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -11,7 +11,7 @@ import com.example.g0294.tutorial.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BaseAdapterActivity extends Activity {
+public class BaseAdapterActivity extends AppCompatActivity {
     protected String[] countries = {
             "台灣",
             "日本",
@@ -37,9 +37,8 @@ public class BaseAdapterActivity extends Activity {
         setContentView(R.layout.notify_layout);
         arrayListView = (ListView) findViewById(R.id.arrayListView);
         button = (Button) findViewById(R.id.btn_add);
-        //Simple Adapter
-        // 資料初始化
 
+        // 資料初始化
         for (int i = 0; i < countries.length; i++) {
             items.add(new CountryItem(countries[i], images[i]));
         }
@@ -53,6 +52,7 @@ public class BaseAdapterActivity extends Activity {
                 //add a country
                 items.add(new CountryItem("阿富汗", R.drawable.ic_afuhan));
                 myAdapter.updateData(items);
+//                myAdapter.notifyDataSetChanged();
             }
         });
 

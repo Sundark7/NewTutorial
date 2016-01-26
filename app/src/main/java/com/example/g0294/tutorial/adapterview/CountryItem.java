@@ -4,12 +4,26 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class CountryItem implements Parcelable {
+    public static final Creator<CountryItem> CREATOR = new Creator<CountryItem>() {
+        public CountryItem createFromParcel(Parcel source) {
+            return new CountryItem(source);
+        }
+
+        public CountryItem[] newArray(int size) {
+            return new CountryItem[size];
+        }
+    };
     String country;
     int image_id;
 
     public CountryItem(String country, int image_id) {
         this.country = country;
         this.image_id = image_id;
+    }
+
+    protected CountryItem(Parcel in) {
+        this.country = in.readString();
+        this.image_id = in.readInt();
     }
 
     public String getCountry() {
@@ -38,19 +52,4 @@ public class CountryItem implements Parcelable {
         dest.writeString(this.country);
         dest.writeInt(this.image_id);
     }
-
-    protected CountryItem(Parcel in) {
-        this.country = in.readString();
-        this.image_id = in.readInt();
-    }
-
-    public static final Creator<CountryItem> CREATOR = new Creator<CountryItem>() {
-        public CountryItem createFromParcel(Parcel source) {
-            return new CountryItem(source);
-        }
-
-        public CountryItem[] newArray(int size) {
-            return new CountryItem[size];
-        }
-    };
 }

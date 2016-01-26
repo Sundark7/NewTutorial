@@ -1,7 +1,7 @@
 package com.example.g0294.tutorial.adapterview;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
@@ -10,7 +10,7 @@ import com.example.g0294.tutorial.R;
 
 import java.util.ArrayList;
 
-public class ExpandableListViewActivity extends Activity {
+public class ExpandableListViewActivity extends AppCompatActivity {
     private String[] groupData = {"Part1", "Part2"};
     private ArrayList<ArrayList<ItemClass>> childData;
     private ArrayList<ItemClass> lData;

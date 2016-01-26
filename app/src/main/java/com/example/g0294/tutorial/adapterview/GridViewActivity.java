@@ -1,7 +1,7 @@
 package com.example.g0294.tutorial.adapterview;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class GridViewActivity extends Activity {
+public class GridViewActivity extends AppCompatActivity {
     private GridView gridView;
     private int[] image = {
             R.drawable.amex, R.drawable.ebay, R.drawable.maestro,

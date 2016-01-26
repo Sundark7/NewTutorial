@@ -1,8 +1,8 @@
 package com.example.g0294.tutorial.adapterview;
 
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SimpleAdapterActivity extends Activity {
+public class SimpleAdapterActivity extends AppCompatActivity {
     protected String[] countries = {
             "台灣",
             "日本",

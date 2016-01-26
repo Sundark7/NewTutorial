@@ -1,13 +1,13 @@
 package com.example.g0294.tutorial.adapterview;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 
 import com.example.g0294.tutorial.R;
 
-public class AutoCompleteActivity extends Activity {
+public class AutoCompleteActivity extends AppCompatActivity {
     private static final String[] countries = {"China", "Russia", "Germany",
             "Ukraine", "Belarus", "USA", "China1", "China2", "USA1"};
 
