@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.widget.ImageView;
 
 import com.example.g0294.tutorial.R;
@@ -64,32 +63,31 @@ public class ImageResizeActivity extends Activity {
         img5 = (ImageView) findViewById(R.id.img5);
         img6 = (ImageView) findViewById(R.id.img6);
 
-        // img1.setImageResource(R.drawable.taiwan);
-        // img2.setImageResource(R.drawable.america);
-        // img3.setImageResource(R.drawable.china);
-        // img4.setImageResource(R.drawable.japan);
-        // img5.setImageResource(R.drawable.korea);
-        // img6.setImageResource(R.drawable.canada);
+//         img1.setImageResource(R.drawable.taiwan);
+//         img2.setImageResource(R.drawable.america);
+//         img3.setImageResource(R.drawable.china);
+//         img4.setImageResource(R.drawable.japan);
+//         img5.setImageResource(R.drawable.korea);
+//         img6.setImageResource(R.drawable.canada);
 
         Bitmap bitmap;
-        // bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.taiwan);
-        // img1.setImageBitmap(bitmap);
-        // bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.america);
-        // img2.setImageBitmap(bitmap);
-        // bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.china);
-        // img3.setImageBitmap(bitmap);
-        // bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.japan);
-        // img4.setImageBitmap(bitmap);
-        // bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.korea);
-        // img5.setImageBitmap(bitmap);
-        // bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.canada);
-        // img6.setImageBitmap(bitmap);
+//         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.taiwan);
+//         img1.setImageBitmap(bitmap);
+//         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.america);
+//         img2.setImageBitmap(bitmap);
+//         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.china);
+//         img3.setImageBitmap(bitmap);
+//         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.japan);
+//         img4.setImageBitmap(bitmap);
+//         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.korea);
+//         img5.setImageBitmap(bitmap);
+//         bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.canada);
+//         img6.setImageBitmap(bitmap);
 
         img1.post(new Runnable() {
 
             @Override
             public void run() {
-                Log.i("TEST", "Layout width : " + img1.getWidth());
                 pWidth = img1.getWidth();
             }
         });
@@ -109,6 +107,5 @@ public class ImageResizeActivity extends Activity {
         img5.setImageBitmap(bitmap);
         bitmap = decodeSampledBitmapFromResource(getResources(), R.drawable.canada, pWidth, 120 * dens / 160);
         img6.setImageBitmap(bitmap);
-
     }
 }

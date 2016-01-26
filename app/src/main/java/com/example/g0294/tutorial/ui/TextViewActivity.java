@@ -1,9 +1,9 @@
 package com.example.g0294.tutorial.ui;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.example.g0294.tutorial.MainActivity;
 import com.example.g0294.tutorial.R;
 
-public class TextViewActivity extends Activity {
+public class TextViewActivity extends AppCompatActivity {
     protected String str;
     private TextView textView, tvHtml, tvLink, tvSpan;
 

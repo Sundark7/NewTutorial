@@ -1,8 +1,8 @@
 package com.example.g0294.tutorial.ui;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.example.g0294.tutorial.R;
 
-public class UserInterfaceActivity extends Activity {
+public class UserInterfaceActivity extends AppCompatActivity {
     private Button btn_textView, btn_editText, btn_imageView, btn_button, btn_ratoteImage, btn_imageResize,
             btn_checkBox, btn_radioButton, btn_datetimePicker, btn_progressBar, btn_seekBar, btn_toast,
             btn_alertDialog, btn_webView;

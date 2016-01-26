@@ -1,7 +1,9 @@
 package com.example.g0294.tutorial.ui;
 
-import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -11,7 +13,7 @@ import android.widget.Toast;
 
 import com.example.g0294.tutorial.R;
 
-public class ButtonActivity extends Activity implements View.OnClickListener{
+public class ButtonActivity extends AppCompatActivity implements View.OnClickListener {
     private Button imageButton;
 
     @Override
@@ -19,6 +21,16 @@ public class ButtonActivity extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.button_layout);
         Button btn_listener = (Button) findViewById(R.id.btn_listener);
+
+        SharedPreferences settings = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("name", "Google");
+        editor.putString("URL", "www.google.com");
+        editor.apply();
+
+        SharedPreferences readSettings = getSharedPreferences("settings", MODE_PRIVATE);
+        String name = readSettings.getString("name", "default");
+        String url = readSettings.getString("URL", "default");
 
         btn_listener.setOnClickListener(new View.OnClickListener() {
 

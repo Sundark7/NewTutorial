@@ -1,7 +1,7 @@
 package com.example.g0294.tutorial.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.example.g0294.tutorial.R;
 
-public class CheckBoxActivity extends Activity implements View.OnClickListener {
+public class CheckBoxActivity extends AppCompatActivity implements View.OnClickListener {
     private CheckBox basketball, tennis, baseball, table_tennis;
     private Button button;
 

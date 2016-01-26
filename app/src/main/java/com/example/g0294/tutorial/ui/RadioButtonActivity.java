@@ -1,8 +1,8 @@
 package com.example.g0294.tutorial.ui;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -11,10 +11,7 @@ import android.widget.TextView;
 
 import com.example.g0294.tutorial.R;
 
-/**
- * Created by g0294 on 2016/1/20.
- */
-public class RadioButtonActivity extends Activity {
+public class RadioButtonActivity extends AppCompatActivity {
     private TextView textView;
     private RadioGroup radioGroup;
     private RadioButton radioButton_boy, radioButton_girl;

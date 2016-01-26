@@ -1,7 +1,7 @@
 package com.example.g0294.tutorial.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.example.g0294.tutorial.R;
 
-public class SeekRatingBarActivity extends Activity {
+public class SeekRatingBarActivity extends AppCompatActivity {
     private SeekBar seekBar;
     private RatingBar ratingBar, ratingBar_indicator;
     private TextView tv_seekBar;

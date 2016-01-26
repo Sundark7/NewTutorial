@@ -1,7 +1,7 @@
 package com.example.g0294.tutorial.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.example.g0294.tutorial.R;
 
-public class EditTextActivity extends Activity {
+public class EditTextActivity extends AppCompatActivity {
     private EditText editText, edit_digits;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

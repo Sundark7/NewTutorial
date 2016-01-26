@@ -1,11 +1,11 @@
 package com.example.g0294.tutorial.ui;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.g0294.tutorial.R;
 
-public class AlertDialogActivity extends Activity implements View.OnClickListener {
+public class AlertDialogActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btn_alertDialog_basic, btn_alertDialog_button, btn_alertDialog_list, btn_alertDialog_custom, btn_progressDialog;
 
     @Override

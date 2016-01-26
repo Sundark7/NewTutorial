@@ -1,15 +1,15 @@
 package com.example.g0294.tutorial.ui;
 
-import android.app.Activity;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
 import com.example.g0294.tutorial.R;
 
-public class ProgressBarActivity extends Activity implements View.OnClickListener {
+public class ProgressBarActivity extends AppCompatActivity implements View.OnClickListener {
     private ProgressBar progressBar1, progressBar2;
     private Button btn_sub, btn_add;
 

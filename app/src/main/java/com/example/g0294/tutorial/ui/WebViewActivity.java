@@ -1,11 +1,11 @@
 package com.example.g0294.tutorial.ui;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.example.g0294.tutorial.R;
 
-public class WebViewActivity extends Activity {
+public class WebViewActivity extends AppCompatActivity {
     WebView browser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +26,9 @@ public class WebViewActivity extends Activity {
         // Inject WebAppInterface methods into Web page by having Interface name 'Android'
         browser.addJavascriptInterface(new WebAppInterface(this), "Android");
         // Load URL inside WebView
-        browser.setWebViewClient(new MyWebViewClient(this));
-//        browser.loadUrl("http://ycnas.myds.me/androidjs.html");
-        browser.loadUrl("http://tw.yahoo.com");
+//        browser.setWebViewClient(new MyWebViewClient(this));
+        browser.loadUrl("http://ycnas.myds.me/androidjs.html");
+//        browser.loadUrl("http://tw.yahoo.com");
     }
     //
     @Override

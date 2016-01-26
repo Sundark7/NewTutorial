@@ -1,12 +1,12 @@
 package com.example.g0294.tutorial.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 
 import com.example.g0294.tutorial.R;
 
-public class AndroidViewActivity extends Activity {
+public class AndroidViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

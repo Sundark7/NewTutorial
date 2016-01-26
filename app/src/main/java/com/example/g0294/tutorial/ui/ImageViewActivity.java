@@ -1,14 +1,14 @@
 package com.example.g0294.tutorial.ui;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.g0294.tutorial.R;
 
-public class ImageViewActivity extends Activity {
+public class ImageViewActivity extends AppCompatActivity {
     private Button btn_center, btn_center_crop, btn_center_inside, btn_fit_center, btn_fit_start, btn_fit_xy;
     private ImageView imageView1, imageView2;
 
