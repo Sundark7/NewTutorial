@@ -1,17 +1,15 @@
 package com.example.g0294.tutorial.datastorage;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.example.g0294.tutorial.multithread.VolleyActivity;
-
-public class StorageChoseActivity extends Activity {
+public class StorageChoseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +56,7 @@ public class StorageChoseActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(getApplicationContext(), VolleyActivity.class);
+                intent.setClass(getApplicationContext(), SQLiteDemo.class);
                 startActivity(intent);
             }
         });

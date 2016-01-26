@@ -30,7 +30,10 @@ public class ContactDao {
         values.put(DatabaseHandler.KEY_PH_NO, contact.get_phone_number());
 
         db.insert(DatabaseHandler.TABLE_CONTACTS, null, values);
-        close(); // 關閉連線
+//
+//        db.execSQL("INSERT INTO contacts (name, phone_number) values (?,?)",
+//                new Object[]{contact.get_name(), contact.get_phone_number()});
+//        close(); // 關閉連線
     }
 
     // 取得單一聯絡人資訊
@@ -48,7 +51,7 @@ public class ContactDao {
                         null);
         if (cursor != null) {
             cursor.moveToFirst();
-            result._id = Integer.parseInt(cursor.getString(0));
+            result._id = Integer.parseInt(cursor.getString(cursor.getColumnIndex("id")));
             result._name = cursor.getString(1);
             result._phone_number = cursor.getString(2);
             cursor.close();

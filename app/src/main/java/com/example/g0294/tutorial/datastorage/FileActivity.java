@@ -1,5 +1,6 @@
 package com.example.g0294.tutorial.datastorage;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
@@ -58,8 +59,6 @@ public class FileActivity extends AppCompatActivity {
         if (!isExternalStorageAvailable() || isExternalStorageReadOnly()) {
             saveToExternalStorage.setEnabled(false);
         }
-
-
     }
 
     private boolean isExternalStorageReadOnly() {
@@ -87,9 +86,9 @@ public class FileActivity extends AppCompatActivity {
     private void writeToFile(File fout, String data) {
         FileOutputStream osw = null;
         try {
-            osw = new FileOutputStream(fout);
+//            osw = new FileOutputStream(fout);
             //方法二
-//            osw = openFileOutput(filename, Context.MODE_PRIVATE);
+            osw = openFileOutput(filename, Context.MODE_PRIVATE);
             osw.write(data.getBytes());
             osw.flush();
         } catch (Exception e) {
@@ -109,7 +108,7 @@ public class FileActivity extends AppCompatActivity {
         StringBuilder data = new StringBuilder();
         BufferedReader reader = null;
         try {
-            FileInputStream in = null;
+            FileInputStream in;
             in = new FileInputStream(fin);
             /*方法二*/
             //開啟 getFilesDir() 目錄底下名稱為xxx檔案
@@ -202,9 +201,9 @@ public class FileActivity extends AppCompatActivity {
                 case R.id.tempInternalStorage:
                     try {
                         dir = getApplication().getCacheDir();
-                        File outFile = new File(dir, filename);
+//                        File outFile = new File(dir, filename);
 //                        File outFile = File.createTempFile("SampleFile", ".txt", dir);
-//                        File outFile = File.createTempFile("SampleFile", ".txt");
+                        File outFile = File.createTempFile("SampleFile", ".txt");
                         writeToFile(outFile, inputText.getText().toString());
                         responseText.setText("寫入SampleFile.txt到內部暫存空間...");
                     } catch (Exception e) {
