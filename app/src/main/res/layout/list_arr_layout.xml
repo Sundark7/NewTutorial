@@ -3,14 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFE1FF"
-    android:padding="16dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:choiceMode="singleChoice"
-        android:dividerHeight="5dp"
-        android:divider="#3F51B5" />
+        android:choiceMode="multipleChoice"
+        android:listSelector="@mipmap/ic_launcher" />
 </LinearLayout>

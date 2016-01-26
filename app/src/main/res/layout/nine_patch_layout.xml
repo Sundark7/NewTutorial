@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/normal_button"
-        android:text="" />
+        android:text="Normal" />
 
     <Button
         android:layout_width="match_parent"
@@ -34,10 +34,10 @@
 
     <Button
         android:id="@+id/btn_back"
-        android:layout_marginTop="8dp"
-        android:layout_gravity="end"
         style="@style/ButtonText"
-        android:text="返回"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
+        android:layout_gravity="end"
+        android:layout_marginTop="8dp"
+        android:text="返回" />
 </LinearLayout>
