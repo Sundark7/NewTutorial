@@ -191,7 +191,7 @@ public class NetworkUtils {
 
         try {
 //            XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-//            factory.setNamespaceAware(false); //default false; 可省略
+//            factory.setNamespaceAware(true); //default false; 可省略
 //            XmlPullParser parser = factory.newPullParser();
             XmlPullParser parser = Xml.newPullParser();
             parser.setInput(new StringReader(mContent));
@@ -202,7 +202,7 @@ public class NetworkUtils {
                     case XmlPullParser.START_DOCUMENT:
                         break;
                     case XmlPullParser.START_TAG:
-                        Log.d("XMLParser", "The Start TAG: " + parser.getName());
+//                        Log.d("XMLParser", "The Start TAG: " + parser.getName());
 //                        if ("SiteName".equals(parser.getName())) {
 //                            Log.d("XMLParser", "SiteName: " + parser.nextText());
 //                        } else if ("County".equals(parser.getName())) {
@@ -213,14 +213,14 @@ public class NetworkUtils {
 //                            Log.d("XMLParser", "PublishTime: " + parser.nextText());
 //                        }
 
-//                        if ("EstimateTime".equals(parser.getName())) {
-//                            Log.d("XMLParser", "StopID: " + parser.getAttributeValue(null,"StopID"));
-//                            Log.d("XMLParser", "SID: " + parser.getAttributeValue(null,"SID"));
-//                            Log.d("XMLParser", "StopName: " + parser.getAttributeValue(2));
-//                        }
+                        if ("EstimateTime".equals(parser.getName())) {
+                            Log.d("XMLParser", "StopID: " + parser.getAttributeValue(null, "StopID"));
+                            Log.d("XMLParser", "SID: " + parser.getAttributeValue(null, "SID"));
+                            Log.d("XMLParser", "StopName: " + parser.getAttributeValue(2));
+                        }
                         break;
                     case XmlPullParser.TEXT:
-                        Log.d("XMLParser", "The TEXT: " + parser.getText());
+//                        Log.d("XMLParser", "The TEXT: " + parser.getText());
                         break;
                     case XmlPullParser.END_TAG:
                         Log.d("XMLParser", "The END TAG: " + parser.getName());

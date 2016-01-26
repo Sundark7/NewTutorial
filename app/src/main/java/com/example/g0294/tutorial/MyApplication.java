@@ -21,6 +21,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         Log.i("Application", "onCreate");
+        myState = "From Application";
 //        refWatcher = LeakCanary.install(this);
     }
 
