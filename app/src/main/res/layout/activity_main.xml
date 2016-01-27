@@ -95,6 +95,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Service" />
+
+            <Button
+                android:id="@+id/btn_gcm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Google Cloud Messaging" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

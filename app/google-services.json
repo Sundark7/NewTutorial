@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_id": "original-gasket-91804",
+    "project_number": "1054935626908",
+    "name": "gmap-service"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1054935626908:android:daf2c9b059ef7cc3",
+        "client_id": "android:com.example.g0294.tutorial.free",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "com.example.g0294.tutorial.free"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 2,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 1
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}

@@ -26,9 +26,9 @@
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
     <permission
-        android:name="com.example.g0294.tutorial.permission.C2D_MESSAGE"
+        android:name="com.example.g0294.tutorial.free.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
-    <uses-permission android:name="com.example.g0294.tutorial.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.example.g0294.tutorial.free.permission.C2D_MESSAGE" />
 
     <application
         android:allowBackup="true"
@@ -123,6 +123,9 @@
         <activity
             android:name=".services.ServiceActivity"
             android:label="Service" />
+        <activity
+            android:name=".gcm.GCMActivity"
+            android:label="Google Cloud Messaging" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -179,15 +182,35 @@
             android:enabled="true"
             android:label="Intent Service" />
 
+        <service
+            android:name=".gcm.RegistrationIntentService"
+            android:exported="false" />
+
+        <!-- [START gcm_receiver] -->
         <receiver
-            android:name=".gcm.GCMBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.RECEIVE">
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="com.example.g0294.googlecloudmessaging" />
+                <category android:name="com.example.g0294.tutorial.free" />
             </intent-filter>
         </receiver>
-        <service android:name=".gcm.GCMIntentService" />
+
+        <service
+            android:name=".gcm.MyGcmListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".gcm.MyInstanceIDListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

@@ -18,11 +18,13 @@ import com.example.g0294.tutorial.broadcast.BroadcastReceiverActivity;
 import com.example.g0294.tutorial.customstyle.CustomStyleActivity;
 import com.example.g0294.tutorial.datastorage.StorageChoseActivity;
 import com.example.g0294.tutorial.fragments.FragmentExActivity;
+import com.example.g0294.tutorial.gcm.GCMActivity;
 import com.example.g0294.tutorial.gmap.gMapMenu;
 import com.example.g0294.tutorial.layouts.LayoutsActivity;
 import com.example.g0294.tutorial.memoryleak.MemoryOne;
 import com.example.g0294.tutorial.multithread.ThreadMenuActivity;
 import com.example.g0294.tutorial.notification.NotificationActivity;
+import com.example.g0294.tutorial.services.ServiceActivity;
 import com.example.g0294.tutorial.ui.UserInterfaceActivity;
 
 import butterknife.Bind;
@@ -56,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
     Button btnNotification;
     @Bind(R.id.btn_broadcast)
     Button btnBroadcast;
+    @Bind(R.id.btn_service)
+    Button btnService;
+    @Bind(R.id.btn_gcm)
+    Button btnGcm;
 
     @Override
     protected void onDestroy() {
@@ -108,6 +114,8 @@ public class MainActivity extends AppCompatActivity {
         gMap.setOnClickListener(listener);
         btnNotification.setOnClickListener(listener);
         btnBroadcast.setOnClickListener(listener);
+        btnService.setOnClickListener(listener);
+        btnGcm.setOnClickListener(listener);
     }
 
     @Override
@@ -183,6 +191,14 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_broadcast:
                     intent.setClass(MainActivity.this, BroadcastReceiverActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_service:
+                    intent.setClass(MainActivity.this, ServiceActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_gcm:
+                    intent.setClass(MainActivity.this, GCMActivity.class);
                     startActivity(intent);
                     break;
             }

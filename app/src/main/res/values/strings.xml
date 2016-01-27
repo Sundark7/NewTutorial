@@ -79,4 +79,6 @@
     <string name="EDA">義大</string>
     <string name="zoom_in">＋</string>
     <string name="zoom_out">－</string>
+
+    <string name="gcm_defaultSenderId">1054935626908</string>
 </resources>
