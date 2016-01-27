@@ -115,6 +115,13 @@
         <activity android:name=".ui.WebViewActivity"/>
         <activity android:name=".ui.AndroidViewActivity"/>
         <activity
+            android:name=".ui.DateTimePickerActivity"
+            android:label="Date Time Picker" />
+        <activity android:name=".ui.MenusActivity" />
+        <activity
+            android:name=".ui.MenuSecondActivity"
+            android:parentActivityName=".ui.MenusActivity" />
+        <activity
             android:name=".notification.NotificationActivity"
             android:label="Notification" />
         <activity

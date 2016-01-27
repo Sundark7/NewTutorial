@@ -1,0 +1,60 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:capp="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Menus">
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_action_search"
+        android:orderInCategory="1"
+        android:title="@string/action_search"
+        capp:actionViewClass="android.widget.SearchView"
+        capp:showAsAction="ifRoom|collapseActionView" />
+    <item
+        android:id="@+id/my_action"
+        android:icon="@drawable/ic_action_edit"
+        android:menuCategory="alternative"
+        android:title="My Action"
+        capp:actionLayout="@layout/my_action"
+        capp:showAsAction="ifRoom|collapseActionView" />
+
+    <item
+        android:id="@+id/submenu"
+        android:title="@string/submenu">
+        <menu>
+            <group
+                android:id="@+id/GroupMenu"
+                android:checkableBehavior="single"
+                android:enabled="true"
+                android:orderInCategory="5"
+                android:visible="true">
+                <item
+                    android:id="@+id/action_record"
+                    android:icon="@drawable/ic_action_video"
+                    android:title="@string/action_record"
+                    capp:showAsAction="ifRoom" />
+                <item
+                    android:id="@+id/action_save"
+                    android:icon="@drawable/ic_action_save"
+                    android:title="@string/action_save"
+                    capp:showAsAction="ifRoom" />
+                <item
+                    android:id="@+id/action_play"
+                    android:icon="@drawable/ic_action_play"
+                    android:title="@string/action_play"
+                    capp:showAsAction="ifRoom" />
+            </group>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/action_label"
+        android:icon="@drawable/ic_action_new_label"
+        android:menuCategory="alternative"
+        android:orderInCategory="20"
+        android:title="@string/action_label"
+        android:titleCondensed="@string/action_label_short"
+        capp:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        capp:showAsAction="never" />
+</menu>

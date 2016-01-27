@@ -15,7 +15,7 @@ import com.example.g0294.tutorial.R;
 public class UserInterfaceActivity extends AppCompatActivity {
     private Button btn_textView, btn_editText, btn_imageView, btn_button, btn_ratoteImage, btn_imageResize,
             btn_checkBox, btn_radioButton, btn_datetimePicker, btn_progressBar, btn_seekBar, btn_toast,
-            btn_alertDialog, btn_webView;
+            btn_alertDialog, btn_webView, btn_menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,10 @@ public class UserInterfaceActivity extends AppCompatActivity {
         btn_radioButton.setOnClickListener(listener);
         btn_webView = (Button) findViewById(R.id.btn_webView);
         btn_webView.setOnClickListener(listener);
+        btn_datetimePicker = (Button) findViewById(R.id.btn_datetimePicker);
+        btn_datetimePicker.setOnClickListener(listener);
+        btn_menu = (Button) findViewById(R.id.btn_menu);
+        btn_menu.setOnClickListener(listener);
     }
 
     class SelectActivity implements View.OnClickListener {
@@ -101,6 +105,14 @@ public class UserInterfaceActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_webView:
                     intent.setClass(getApplicationContext(), WebViewActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_datetimePicker:
+                    intent.setClass(getApplicationContext(), DateTimePickerActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_menu:
+                    intent.setClass(getApplicationContext(), MenusActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.btn_toast:

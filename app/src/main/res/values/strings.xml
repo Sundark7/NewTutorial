@@ -81,4 +81,21 @@
     <string name="zoom_out">－</string>
 
     <string name="gcm_defaultSenderId">1054935626908</string>
+
+    <!-- Menus-->
+    <string name="action_settings">設定</string>
+
+    <string name="action_search">搜尋</string>
+    <string name="action_record">錄影</string>
+    <string name="action_save">存檔</string>
+    <string name="action_label_long">新增標籤長長長長長長長長長長長</string>
+    <string name="action_label">新增標籤</string>
+    <string name="action_label_short">新標籤</string>
+    <string name="action_play">播放</string>
+    <string name="hello_world_again">Hello world, again!</string>
+    <string name="second">Go To Second Activity</string>
+    <string name="second_activity_title">Second Activity</string>
+    <string name="submenu">子選單</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
