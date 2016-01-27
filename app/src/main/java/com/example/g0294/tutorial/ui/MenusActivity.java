@@ -38,7 +38,7 @@ public class MenusActivity extends AppCompatActivity {
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayShowHomeEnabled(true);
-            actionBar.setLogo(R.mipmap.ic_launcher);
+            actionBar.setLogo(R.drawable.ic_info);
             actionBar.setDisplayUseLogoEnabled(true);
             actionBar.setTitle("New Title");
         }
@@ -47,8 +47,6 @@ public class MenusActivity extends AppCompatActivity {
         btn_secondActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Intent intent = new Intent(Menus.this, SecondActivity.class);
-                // startActivity(intent);
                 PopupMenu popupMenu = new PopupMenu(MenusActivity.this, v);
                 popupMenu.inflate(R.menu.goactivity);
                 popupMenu.show();
@@ -69,62 +67,7 @@ public class MenusActivity extends AppCompatActivity {
                 });
             }
         });
-        registerForContextMenu(tvColor);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_menus, menu);
-
-        // 取得my action Layout
-        myActionMenuItem = menu.findItem(R.id.my_action);
-        View actionView = myActionMenuItem.getActionView();
-
-        OnEditorListener editorListener = new OnEditorListener();
-        // Edit Text View of the my_action view
-        if (actionView != null) {
-            myActionEditText = (EditText) actionView.findViewById(R.id.myActionEditText);
-            if (myActionEditText != null) {
-                myActionEditText.setOnEditorActionListener(editorListener);
-            }
-        }
-        MenuItemCompat.setOnActionExpandListener(myActionMenuItem,
-                new MenuItemCompat.OnActionExpandListener() {
-                    @Override
-                    public boolean onMenuItemActionExpand(MenuItem item) {
-                        if (myActionEditText != null) {
-                            myActionEditText.setText("");
-                        }
-                        return true;
-                    }
-
-                    @Override
-                    public boolean onMenuItemActionCollapse(MenuItem item) {
-                        return true;
-                    }
-                });
-        // return super.onCreateOptionsMenu(menu);
-        return true;
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case MENU_COLOR_RED:
-                tvColor.setText("The TextView is Red!");
-                tvColor.setTextColor(Color.RED);
-                break;
-            case MENU_COLOR_GREEN:
-                tvColor.setText("The TextView is Green!");
-                tvColor.setTextColor(Color.GREEN);
-                break;
-            case MENU_COLOR_BLUE:
-                tvColor.setText("The TextView is Blue!");
-                tvColor.setTextColor(Color.BLUE);
-                break;
-        }
-        return super.onContextItemSelected(item);
+        registerForContextMenu(tvColor);//registerForContextMenu(): 讓程式知道使用者是點選那個物件時要出現選單。
     }
 
     @Override
@@ -132,15 +75,8 @@ public class MenusActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        // //noinspection SimplifiableIfStatement
-        // if (id == R.id.action_settings) {
-        // return true;
-        // }
-        // return super.onOptionsItemSelected(item);
-        Log.i(TAG, "Item ID: " + id);
-        switch (id) {
+        switch (item.getItemId()) {
             case R.id.action_search:
                 Toast.makeText(this, "搜尋", Toast.LENGTH_SHORT).show();
                 return true;
@@ -163,17 +99,72 @@ public class MenusActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_menus, menu);
+
+        // 取得my action Layout
+        myActionMenuItem = menu.findItem(R.id.my_action);
+        View actionView = myActionMenuItem.getActionView();
+
+        OnEditorListener editorListener = new OnEditorListener();
+        // Edit Text View of the my_action view
+        if (actionView != null) {
+            myActionEditText = (EditText) actionView.findViewById(R.id.myActionEditText);
+            if (myActionEditText != null) {
+                myActionEditText.setOnEditorActionListener(editorListener);
+            }
+        }
+
+        MenuItemCompat.setOnActionExpandListener(myActionMenuItem,
+                new MenuItemCompat.OnActionExpandListener() {
+                    @Override
+                    public boolean onMenuItemActionExpand(MenuItem item) {
+                        if (myActionEditText != null) {
+                            myActionEditText.setText("");
+                        }
+                        return true;
+                    }
+
+                    @Override
+                    public boolean onMenuItemActionCollapse(MenuItem item) {
+                        return true;
+                    }
+                });
+//         return super.onCreateOptionsMenu(menu);
+        return true;
+    }
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         switch (v.getId()) {
             case R.id.tvColor:
                 menu.add(0, MENU_COLOR_RED, 0, "Red");
-                menu.add(0, MENU_COLOR_GREEN, 0, "Green");
-                menu.add(0, MENU_COLOR_BLUE, 0, "Blue");
+                menu.add(0, MENU_COLOR_GREEN, 1, "Green");
+                menu.add(0, MENU_COLOR_BLUE, 2, "Blue");
                 break;
         }
         super.onCreateContextMenu(menu, v, menuInfo);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_COLOR_RED:
+                tvColor.setText("The TextView is Red!");
+                tvColor.setTextColor(Color.RED);
+                break;
+            case MENU_COLOR_GREEN:
+                tvColor.setText("The TextView is Green!");
+                tvColor.setTextColor(Color.GREEN);
+                break;
+            case MENU_COLOR_BLUE:
+                tvColor.setText("The TextView is Blue!");
+                tvColor.setTextColor(Color.BLUE);
+                break;
+        }
+        return super.onContextItemSelected(item);
     }
 
     @Override
