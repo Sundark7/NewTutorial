@@ -52,7 +52,7 @@ public class MainActivity extends FragmentActivity
 
             // Add the fragment to the 'fragment_container' FrameLayout
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_container, firstFragment).commit();
+                    .replace(R.id.fragment_container, firstFragment).commit();
         }
     }
 
